@@ -1,6 +1,4 @@
-![voidscrapers1 1 logo_big](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/92228f83-d7d6-41fd-9f1c-ff40bacb45f7)
-
-*Version 1.1 out now!*
+<img width="660" height="660" alt="shellcorps_splash_big" src="https://github.com/user-attachments/assets/4f73505e-e9a6-461d-9165-ea37b406f6aa" />
 
 This is a new squad for Into the Breach. Just extract the zip and put it right in the game's mods folder.
 
@@ -8,49 +6,56 @@ Feedback is preferred on the relevant channels of the official discord (or the s
 
 Check the Issues tab for known bugs that are being worked on.
 
-Looking for another of my squads? You can find it here: https://github.com/Hederarch/ItB-Tin-Tyrants
+Looking for another of my squads? You can find it here: https://github.com/Hederarch/ItB-Voidscrapers
 
 *(also these do require the Into the Breach modloader. That shouldn't be a problem for most people but download it if you don't have it.)*
 
 ## What's Included
-This mod adds a new squad based around rapidly repositioning Vek for the black hole to devour.
+This mod adds a new squad based around sharing power to maximize each turn's actions. Each is versatile but has specific drawbacks that may require tagging out and passing their turn to a partner.
 
-![voidscrapers_menu](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/f5343f98-ee06-4111-901d-69273d80c6b9)
+<img width="344" height="318" alt="shellcorps_menu" src="https://github.com/user-attachments/assets/1d369314-fb82-48ae-8252-336da8e5473d" />
+
+  The squad is based on the new opportunities offered by its signature passive:
+
+<img width="219" height="329" alt="sc_coreshare_demo" src="https://github.com/user-attachments/assets/89812d4b-292a-450d-aa31-0cd4fd6356fb" />
+
+Sharing a core with an ally transfers attack and movement opportunities, allowing you to smoothly split turns over multiple Mechs or let one Mech act multiple times.
+
+<img width="411" height="386" alt="sc_jaws_demo" src="https://github.com/user-attachments/assets/e3c761bf-ca61-4f45-9243-2691ccac327b" />
+
+  The **Stag Mech** is a powerhouse focused on grabbing Vek and throwing them around the board with its mandibles. The **Power Jaws** can rush to an enemy and throw it, with longer run-ups letting you throw longer ranges.
+
+Precise Throw (1 Core) - Allows throwing diagonally
+
++1 Damage (2 Cores) - Increases throwing damage by one
 
 
-![palanquin_demo](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/7ddbb0e9-6830-48fd-a6f6-1383c67f5c21)
-The **Palanquin Mech** contains a raw singularity and can harness its power to instantly destroy a nearby unit, but its immense weight makes the mech very slow. Use the other mechs to toss valuable targets into its range.
+<img width="400" height="402" alt="sc_elytrajets_demo" src="https://github.com/user-attachments/assets/1bba6f8a-a2c9-4dbd-a50a-e711a06b721b" />
 
-![voidgrip_demo](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/987ea4bb-6806-498a-82a2-9c460f7a9169)
+  The **Rove Mech** quickly maneuvers around Vek and hits from the side with a diagonal jump and flying strike from its **Elytra Jets**.
 
-Digestion (2 Cores) - Heals the Mech when consuming an adjacent tile
+Turbulence (1 Core) - Increases Damage by 1, but pushes nearby tiles during liftoff and turning, risking collateral damage.
 
-+1 Damage (1 Core) - Increases pull damage by one
+Gliding (2 Cores) - Removes the range limits (Up to 2 spaces in each direction by default)
 
-![steamer_demo](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/68afb730-2dcc-4f14-b8c5-24771d7ae3a9)
-The **Orbit mech** rotates nearby units around a central point, swapping their positions and dealing damage on impact.
 
-![flipmortar_demo](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/87b46546-6f07-4386-829c-e8da53b8de7a)
+<img width="400" height="389" alt="sc_chembarder_demo" src="https://github.com/user-attachments/assets/6bddfde0-03e9-4471-9be0-36f916483886" />
 
-Add Shield (2 Cores) - Shields the central tile
+  The **Jewel Mech** is the squad's source of healing with its **Chem Bombarder**, picking off weak enemies and supporting from the backlines. 
 
-Ally Immune (1 Core) - No longer damages friendly units
+Stable Compounds (2 Cores) - Increases healing to allies by 2, and removes damage to Buildings.
 
-![taser_demo](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/b172306d-1674-451d-a4cb-b4d114263154)
-The **Flux Mech** can shoot through anything to spread out groups and precisely move Vek. 
+Biofuel (3 Cores) - Lets you steal the turns of slain Vek, fully refunding the Mech's movement and attack on kill.
 
-![fluxgun_demo](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/26bf8725-4a9d-4a48-b8bb-3681b62c7de9)
+### And More!
 
-+1 Damage (2 Cores) - Increases damage by 1, and makes the pushed tiles on the side also do damage.
+This squad also features 5 achievements highlighting the strengths of each Mech and the strategic quirks of turn-sharing. Try to collect them all!
 
-Building Immune (1 Core) - No longer damages targeted buildings.
-
-## Version 1.1
-New to this post-release update are 3 achievments to unlock the squad's weapons for all runs, and a secret special pilot for completing them all!
-
-![voidscrapers_chievo1](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/893071bc-6bb2-44ec-bd71-28153ad2a513)
-![voidscrapers_chievo2](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/6b14c9fb-44d4-4111-ba0f-f0bbacca3ad4)
-![voidscrapers_chievo3](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/947ed003-dd7a-4d5b-8422-682fec69d95b)
-![mawpilot_secret](https://github.com/Hederarch/ItB-Voidscrapers/assets/66890769/29e2475b-6f86-46a8-9c1b-a717334ca24d)
+<img width="64" height="64" alt="shellcorps_chievo1" src="https://github.com/user-attachments/assets/d3be6c01-5695-4349-b637-14e37e1c6852" />
+<img width="64" height="64" alt="shellcorps_chievo2" src="https://github.com/user-attachments/assets/11dacc37-da65-4103-bf6a-88f978d7bd4d" />
+<img width="64" height="64" alt="shellcorps_chievo3" src="https://github.com/user-attachments/assets/616d49fa-fb6a-4ca8-b053-7d2ff29d1d97" />
+<img width="64" height="64" alt="shellcorps_chievo4" src="https://github.com/user-attachments/assets/791e9c02-2ee7-484d-bc8e-061a199a7cde" />
+<img width="64" height="64" alt="shellcorps_chievo5" src="https://github.com/user-attachments/assets/5811f902-c8e2-44a1-88ca-cd5a691b3ed4" />
+<img width="64" height="64" alt="shellcorps_mastery" src="https://github.com/user-attachments/assets/225becfc-7aba-40b7-b60f-4398c0f34258" />
 
 *Thanks for playing!*
