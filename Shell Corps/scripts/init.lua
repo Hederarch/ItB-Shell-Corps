@@ -16,7 +16,6 @@ function mod:init() -- these are the files that the modloader will load
 	require(self.scriptPath .."palettes")
 	require(self.scriptPath .."pawns")
 	require(self.scriptPath .."weapons")
-	require(self.scriptPath .."hooks")
 	
 end
 	-- this adds your weapons to the weapon deck so other squads can use them
