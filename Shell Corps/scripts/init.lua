@@ -4,7 +4,7 @@
 local mod = {
 	id = "hedera_shell_corps", --replace this, make it unique! it's only internal so it doesn't really matter.
 	name = "Shell Corps", -- this name is what shows up in the mod list 
-	version = "1.0.0", 
+	version = "1.0.1", 
 	requirements = {}, 
 	modApiVersion = "2.3.0",
 	icon = "img/mod_icon.png"

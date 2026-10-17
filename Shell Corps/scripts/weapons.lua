@@ -114,7 +114,6 @@ end
 function SC_Ejector:GetSkillEffect(p1, p2)
 	local ret = SkillEffect()
 	local damage = SpaceDamage(p2,0)
-	damage.iSmoke = EFFECT_REMOVE
 	damage.sImageMark = "combat/icons/icon_doubleshot_glow.png"
 	damage.sAnimation = "ExploRepulse3",
 	ret:AddBounce(p1, 1)
@@ -392,6 +391,8 @@ function SC_KO_Combo:GetSkillEffect(p1,p2)
 
 	if Board:GetPawnTeam(p2) == TEAM_PLAYER or (Board:IsBuilding(p2) and not self.BuildingDmg) then
 		local heal = SpaceDamage(p2,-self.Healing,dir)
+		heal.iFire = EFFECT_REMOVE
+		heal.iAcid = EFFECT_REMOVE
 		ret:AddDamage(heal)
 		local damagepush = SpaceDamage(p2 + DIR_VECTORS[(dir+1)%4], 0, (dir+1)%4)
 		damagepush.sAnimation = "airpush_"..((dir+1)%4)

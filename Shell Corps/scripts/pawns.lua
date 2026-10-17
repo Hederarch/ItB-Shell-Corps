@@ -86,9 +86,9 @@ end
 local a = ANIMS
 a[mech1 .. "_mech"] =			a.MechUnit:new{Image = "units/player/" .. mech1 .. "_mech.png", PosX = -18, PosY = -8}
 a[mech1 .. "_mecha"] =			a.MechUnit:new{Image = "units/player/" .. mech1 .. "_mech_a.png", PosX = -23, PosY = -8, NumFrames = 4 }
-a[mech1 .. "_mechw"] =			a.MechUnit:new{Image = "units/player/" .. mech1 .. "_mech_w.png", PosX = -23, PosY = 2 }
+a[mech1 .. "_mechw"] =			a.MechUnit:new{Image = "units/player/" .. mech1 .. "_mech_w.png", PosX = -23, PosY = 7 }
 a[mech1 .. "_mech_broken"] =	a.MechUnit:new{Image = "units/player/" .. mech1 .. "_mech_broken.png", PosX = -23, PosY = -7 }
-a[mech1 .. "_mechw_broken"] =	a.MechUnit:new{Image = "units/player/" .. mech1 .. "_mech_w_broken.png", PosX = -23, PosY = 2 }
+a[mech1 .. "_mechw_broken"] =	a.MechUnit:new{Image = "units/player/" .. mech1 .. "_mech_w_broken.png", PosX = -23, PosY = 7 }
 a[mech1 .. "_mech_ns"] =		a.MechIcon:new{Image = "units/player/" .. mech1 .. "_mech_ns.png"}
 
 mechPath = path .."img/units/" .. mech2 .. "/"

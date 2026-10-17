@@ -58,7 +58,7 @@ local sc_ach2 = modApi.achievements:add{
 	image = mod.resourcePath.."img/achievements/shellcorps_chievo2.png",
 
 	--Optional
-	tooltip = "Get 3 direct kills with the Chem Bombarder in one turn.",
+	tooltip = "Trigger Chem Bombarder's on-kill bonus 3 times in one turn.",
 	squad = squad_id,
 	addReward = check_mastery_status,
 	remReward = check_mastery_status,
