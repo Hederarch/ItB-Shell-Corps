@@ -100,7 +100,7 @@ function SC_Ejector:GetTargetArea(point)
 		for j = 0, board_size.y - 1  do
 			if Board:IsPawnTeam(Point(i,j),TEAM_PLAYER) then
 				local pawn_id = Board:GetPawn(Point(i,j)):GetId()
-				if not repaired_units[pawn_id] then--prevents targeting the same unit twice if it's large
+				if not repaired_units[pawn_id] and Point(i,j) ~= point then--prevents targeting the same unit twice if it's large, or targeting yourself
 					ret:push_back(Point(i,j))
 					repaired_units[pawn_id] = true
 				end
