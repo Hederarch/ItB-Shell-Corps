@@ -66,4 +66,4 @@ This squad also features 5 achievements highlighting the strengths of each Mech 
   - Made Green Energy achievement description clearer
   - Chem Bombarder's heal now removes Fire/A.C.I.D. from targeted space
   - Fixed Stag Mech _w not being deep enough
-  - Fixed Re-Actors repair being able to pass a turn to yourself
+  - Removed Re-Actors being able to target allies when it would do nothing or waste actions (including targeting yourself)
