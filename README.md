@@ -59,3 +59,11 @@ This squad also features 5 achievements highlighting the strengths of each Mech 
 <img width="64" height="64" alt="shellcorps_mastery" src="https://github.com/user-attachments/assets/225becfc-7aba-40b7-b60f-4398c0f34258" />
 
 *Thanks for playing!*
+
+## Changelog
+- 1.0.1
+  - Removed an unused file that was printing errors (oops!)
+  - Made Green Energy achievement description clearer
+  - Chem Bombarder's heal now removes Fire/A.C.I.D. from targeted space
+  - Fixed Stag Mech _w not being deep enough
+  - Fixed Re-Actors repair being able to pass a turn to yourself
