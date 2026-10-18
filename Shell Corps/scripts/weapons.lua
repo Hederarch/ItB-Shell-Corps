@@ -69,7 +69,7 @@ end
 
 replaceRepair:addSkill{
 		Name = "Power Down",
-		Description = "Pass a power core to an ally, transfering attack opportunity and movement if not used.",
+		Description = "Pass a power core to an ally, transfering attack opportunity and movement if not used. Cannot target allies who still have their action and movement unspent.",
 		weapon = "SC_Ejector",
 		Icon = "img/weapons/core_out_repair_noarrows.png",
 		IsActive = function(pawn)
@@ -82,7 +82,7 @@ replaceRepair:addSkill{
 
 SC_Ejector = Skill:new {
 	Name = "Power Down",
-	Description = "Pass a power core to an ally, transfering attack opportunity and movement if not used.",
+	Description = "Pass a power core to an ally, transfering attack opportunity and movement if not used. Cannot target allies who still have their action and movement unspent.",
 	Icon = "img/weapons/core_out_repair_noarrows.png",
 	TipImage = {
 		Unit = Point(2,1),
@@ -100,7 +100,7 @@ function SC_Ejector:GetTargetArea(point)
 		for j = 0, board_size.y - 1  do
 			if Board:IsPawnTeam(Point(i,j),TEAM_PLAYER) then
 				local pawn_id = Board:GetPawn(Point(i,j)):GetId()
-				if not repaired_units[pawn_id] and Point(i,j) ~= point then--prevents targeting the same unit twice if it's large, or targeting yourself
+				if not repaired_units[pawn_id] and Point(i,j) ~= point and (Board:GetPawn(Point(i,j)):IsMovementSpent() or not Board:GetPawn(Point(i,j)):IsActive())  then--prevents targeting the same unit twice if it's large, targeting allies who would waste it, or targeting yourself
 					ret:push_back(Point(i,j))
 					repaired_units[pawn_id] = true
 				end
