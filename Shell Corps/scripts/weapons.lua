@@ -76,6 +76,14 @@ replaceRepair:addSkill{
 			if not GAME then return false end
 			local mission = GAME.GetMission and GetCurrentMission()
 			if not mission then return false end
+				for i = 1,#replaceRepair.repairSkills do
+					local rskill = replaceRepair.repairSkills[i].PilotSkill
+					if rskill ~= nil then
+						if pawn:IsAbility(rskill) then -- defer to pilot replacerepairs
+							return false 
+						end
+					end
+				end
 			return IsPassiveSkill("SC_Reactivator")
 		end
 	}
@@ -124,11 +132,11 @@ function SC_Ejector:GetSkillEffect(p1, p2)
 	-- achievement triggers
 	if isRealMission() and GAME.squadTitles["TipTitle_"..GameData.ach_info.squad] == "Shell Corps" then 
 		if not modApi.achievements:isComplete("hedera_shell_corps", "sc_ach5") then --Indecisive
-			ret:AddScript("local mission = GetCurrentMission() if mission.sc_cores_passed == nil then LOG(\"SHELL CORPS ACH5 HOOK FAILURE\") end mission.sc_cores_passed = mission.sc_cores_passed + 1 if mission.sc_cores_passed >= 6 then modApi.achievements:trigger(\"hedera_shell_corps\",\"sc_ach5\") end")
+			ret:AddScript("local mission = GetCurrentMission() if mission ~= nil then if mission.sc_cores_passed == nil then LOG(\"SHELL CORPS ACH5 HOOK FAILURE\") end mission.sc_cores_passed = mission.sc_cores_passed + 1 if mission.sc_cores_passed >= 6 then modApi.achievements:trigger(\"hedera_shell_corps\",\"sc_ach5\") end end")
 		end
 		if not modApi.achievements:isComplete("hedera_shell_corps", "sc_ach4") then -- Do It Yourselves
 			if Board:GetPawn(p2):IsMech() == false then
-				ret:AddScript("local mission = GetCurrentMission() if mission.sc_cores_lazy == nil then  LOG(\"SHELL CORPS ACH4 HOOK FAILURE\") end mission.sc_cores_lazy = mission.sc_cores_lazy + 1 if mission.sc_cores_lazy >= 3 then modApi.achievements:trigger(\"hedera_shell_corps\",\"sc_ach4\") end")
+				ret:AddScript("local mission = GetCurrentMission() if mission ~= nil then if mission.sc_cores_lazy == nil then  LOG(\"SHELL CORPS ACH4 HOOK FAILURE\") end mission.sc_cores_lazy = mission.sc_cores_lazy + 1 if mission.sc_cores_lazy >= 3 then modApi.achievements:trigger(\"hedera_shell_corps\",\"sc_ach4\") end end")
 			end
 		end
 	end
@@ -429,7 +437,7 @@ function SC_KO_Combo:GetSkillEffect(p1,p2)
 			
 			-- achievement triggers
 			if not modApi.achievements:isComplete("hedera_shell_corps", "sc_ach2") then --Green Energy
-				ret:AddScript("local mission = GetCurrentMission() if mission.sc_killcombo == nil then LOG(\"SHELL CORPS ACH2 HOOK FAILURE\") end mission.sc_killcombo = mission.sc_killcombo + 1 if mission.sc_killcombo >= 3 then modApi.achievements:trigger(\"hedera_shell_corps\",\"sc_ach2\") end")
+				ret:AddScript("local mission = GetCurrentMission() if mission ~= nil then if mission.sc_killcombo == nil then LOG(\"SHELL CORPS ACH2 HOOK FAILURE\") end mission.sc_killcombo = mission.sc_killcombo + 1 if mission.sc_killcombo >= 3 then modApi.achievements:trigger(\"hedera_shell_corps\",\"sc_ach2\") end end")
 			end
 			
 			
