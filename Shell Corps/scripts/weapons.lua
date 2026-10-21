@@ -575,23 +575,27 @@ function SC_Jaws:GetSkillEffect(p1, p2)
 	local pushloc = p2
 	
 	if Board:IsPawnSpace(p2) and not Board:GetPawn(p2):IsGuarding() then
-		ret:AddCharge(Board:GetSimplePath(p1, p2 - DIR_VECTORS[direction]), FULL_DELAY)		
-		
+		local target_id = Board:GetPawn(p2):GetId()
+		local owner_id = Board:GetPawn(p1):GetId()
+		ret:AddCharge(Board:GetSimplePath(p1, p2), FULL_DELAY)	
 		local hit = SpaceDamage(p2, self.Damage)
 		hit.sSound = "/impact/generic/mech"
 		hit.sAnimation = "Swipe2Claw1"
 		local nothrow = Board:IsDeadly(hit, Pawn) or Board:GetPawn(p2):IsGuarding()
 		if Board:IsDeadly(hit, Pawn) then hit.bKO_Effect = true end
+		ret:AddScript(string.format("Board:GetPawn(%d):SetSpace(Point(-1,-1))",owner_id)) --dodge the damage
 		ret:AddDamage(hit)
+		ret:AddScript(string.format("Board:GetPawn(%d):SetSpace(Point(%d,%d))",owner_id,p2.x,p2.y)) -- come back we miss you
+		
 		pushloc = p2
 		if not nothrow then
+			ret:AddScript(string.format("Board:GetPawn(%d):MoveToBottom()",target_id))
 			local move = PointList()
 			move:push_back(p2)
 			move:push_back(p2 - DIR_VECTORS[direction])
 			ret:AddBurst(p2,"Emitter_Crack_Start2",DIR_NONE)
 			ret:AddLeap(move, FULL_DELAY)
 		end
-		ret:AddCharge(Board:GetSimplePath(p2 - DIR_VECTORS[direction],p2), NO_DELAY)	
 		
 	elseif Board:IsBlocked(p2, PATH_PROJECTILE) then
 		ret:AddCharge(Board:GetSimplePath(p1, p2 - DIR_VECTORS[direction]), FULL_DELAY)	
@@ -642,9 +646,11 @@ function SC_Jaws:GetFinalEffect(p1, p2, p3)
 	local pushloc = p2
 	
 	if Board:IsPawnSpace(p2) and not Board:GetPawn(p2):IsGuarding() then
+		
+		local target_id = Board:GetPawn(p2):GetId()
+		local owner_id = Board:GetPawn(p1):GetId()
 
-		ret:AddCharge(Board:GetSimplePath(p1, p2 - DIR_VECTORS[direction]), FULL_DELAY)		
-
+		
 		
 		local hit = SpaceDamage(p2, self.Damage)
 		hit.sSound = "/impact/generic/mech"
@@ -655,11 +661,13 @@ function SC_Jaws:GetFinalEffect(p1, p2, p3)
 			hit.sAnimation = "explosword_"..direction
 		end
 		if Board:IsDeadly(hit, Pawn) then hit.bKO_Effect = true end
+		ret:AddCharge(Board:GetSimplePath(p1, p2), FULL_DELAY)
+		ret:AddScript(string.format("Board:GetPawn(%d):SetSpace(Point(-1,-1))",owner_id)) --dodge the damage
 		ret:AddDamage(hit)
-		
-		
+		ret:AddScript(string.format("Board:GetPawn(%d):SetSpace(Point(%d,%d))",owner_id,p2.x,p2.y)) -- come back we miss you
 		pushloc = p2
 		if not nothrow then
+			ret:AddScript(string.format("Board:GetPawn(%d):MoveToBottom()",target_id))
 			local move = PointList()
 			move:push_back(p2)
 			move:push_back(p3)
@@ -669,7 +677,7 @@ function SC_Jaws:GetFinalEffect(p1, p2, p3)
 			ret:AddDamage(icon)
 			ret:AddLeap(move, NO_DELAY)
 		end
-		ret:AddCharge(Board:GetSimplePath(p2 - DIR_VECTORS[direction],p2), NO_DELAY)	
+		
 		ret:AddDelay(1) --should cover leap time
 	elseif Board:IsBlocked(p2, PATH_PROJECTILE) then
 		ret:AddCharge(Board:GetSimplePath(p1, p2 - DIR_VECTORS[direction]), FULL_DELAY)	
