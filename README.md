@@ -67,3 +67,6 @@ This squad also features 5 achievements highlighting the strengths of each Mech 
   - Chem Bombarder's heal now removes Fire/A.C.I.D. from targeted space
   - Fixed Stag Mech _w not being deep enough
   - Removed Re-Actors being able to target allies when it would do nothing or waste actions (including targeting yourself)
+- 1.0.2
+  - Re-Actors now allows pilots with custom repairs to override it
+  - Achievement triggers no longer whine about mission being nil in error.txt
