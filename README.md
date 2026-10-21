@@ -70,3 +70,5 @@ This squad also features 5 achievements highlighting the strengths of each Mech 
 - 1.0.2
   - Re-Actors now allows pilots with custom repairs to override it
   - Achievement triggers no longer whine about mission being nil in error.txt
+- 1.0.3
+  - Stag Mech no longer stops on the tile before its target when charging
